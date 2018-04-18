@@ -49,12 +49,12 @@
         <legend>Customer Information</legend>
         <div class="formRow">
           <label for="name">Name*</label>
-          <input name="custName" id="name" type="text" placeholder="first and last name" />
+          <input name="custName" id="name" type="text" placeholder="first and last name" required />
         </div>
 
         <div class="formRow">
           <label for="street">Street address</label>
-          <input name="custStreet" id="street" type="text" />
+          <input name="custStreet" id="street" type="text" placeholder="123 Thatsa Street" />
         </div>
 
         <div class="formRow">
@@ -69,17 +69,17 @@
 
         <div class="formRow">
           <label for="zip">Postal code</label>
-          <input name="custZip" id="zip" type="text" placeholder="nnnnn (-nnnn)" />
+          <input name="custZip" id="zip" type="text" placeholder="nnnnn (-nnnn)" pattern="^\d{5}(-\d{4})?$" />
         </div>
 
         <div class="formRow">
           <label for="phone">Phone number</label>
-          <input name="custPhone" id="phone" type="tel" placeholder="(nnn) nnn-nnnn" />
+          <input name="custPhone" id="phone" type="tel" placeholder="(nnn) nnn-nnnn" pattern="^\d{10}$|^(\(\d{3}\)\s*)?\d{3}[\s-]?\d{4}$"/>
         </div>
 
         <div class="formRow">
           <label for="mail">E-mail*</label>
-          <input name="custEmail" id="mail" type="email" />
+          <input name="custEmail" id="mail" type="email" placeholder="everybody@lovespizza.com" required />
         </div>
         <div class="formRow">
           <label for="info">Where did you hear about us?<br />(select all that apply)</label>
@@ -91,9 +91,29 @@
             <option value="other">Other</option>
           </select>
         </div>
+        <div class="formRow">
+          <label for="dish">What's your favorite dish?</label>
+          <input name="favDish" id="dish" type="text" list="dishType" />
+          <datalist id="dishType">
+            <option value="Anitpasto Pizza" />
+            <option value="Big Kahuna Pizza" />
+            <option value="BBQ Chicken Pizza" />
+            <option value="Mediterranean Herb Pizza" />
+            <option value="Pasta Rolls" />
+            <option value="Pasto Artichoke Pizza" />
+          </datalist>
+        </div>
+        <div class="formRow">
+          <label for="dineSpin">How many times do you dine out per month?</label>
+          <input name="dineOut" id="dineSpin" type="number" value="1" step="1" min="0" max="20" />
+        </div>
         <input name="mailMe" id="mailCB" value="yes" type="checkbox" />
         <label for="mailCB">Add me to your mailing list for great coupons and specials!</label>
       </fieldset>
+
+
+
+
       <fieldset id="expInfo">
         <legend>Share Your Experience at Red Ball Pizza</legend>
         <div class="formRow">
@@ -136,12 +156,20 @@
             <input name="foodHot" id="hNo" value="no" type="radio" />
           </fieldset>
         </div>
+        <div class="formRow">
+          <label for="rangeBox">Rate the overall service<br />(0=poor; 10=great)</label> 0
+          <input name="serviceRate" id="rangeBox" type="range" value="5" step="1" min="0" max="10" /> 10
+        </div>
         <label for="commBox">Tell us more about your experience!</label>
         <textarea name="custExp" id="commBox"></textarea>
       </fieldset>
+      <div id="buttons">
+        <input type="submit" value="Submit My Survey" />
+        <input type="reset" value="Cancel" />
+      </div>
     </form>
-
   </section>
+
   <footer>
     <h1>ORDER</h1>
     <a href="#">Specials</a> <a href="#">Pizza</a> <a href="#">Pasta</a> <a href="#">Wings</a> <a href="#">Sides</a> <a href="#">Salads</a> <a href="#">Drinks</a> <a href="#">Desserts</a>
