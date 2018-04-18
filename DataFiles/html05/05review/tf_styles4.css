@@ -6,7 +6,7 @@
 
 	 Author: Logan Halloran
 	 Date:  4/3/2018 5:12:51 PM
-      
+
    Filename: tf_styles4.css
 
    This file contains the screen styles used with the Trusted
@@ -14,30 +14,97 @@
 
 */
 
-
 /* Import Basic Design Styles Used on All Screens */
 
 @import url("tf_designs.css");
-
-
-
 /* General Flex Styles */
 
+body {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+}
 
+section#left {
+  -webkit-flex: 1 8 130px;
+  flex: 1 8 130px;
+}
 
+section#right {
+  -webkit-flex: 8 1 351px;
+  flex: 8 1 351px;
+}
 
+section.tips article, aside {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+}
 
+section.tips article {
+  -webkit-flex: 2 1 351px;
+  flex: 2 1 351px;
+}
+
+section.tips aside {
+  -webkit-flex: 1 2 250px;
+  flex: 1 2 250px;
+}
+
+a#navicon {
+  display: none;
+}
+
+@media only screen and (max-width: 480px) {
+  a#navicon {
+    display: block;
+  }
+  nav.horizontal ul {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+  }
+  a#navicon:hover+ul, nav.horizontal ul:hover {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+  }
+}
 
 /* ===============================
 	Mobile Devices: 0 to 480px
    ===============================
 */
 
-
-
-
+@media only screen and (max-width: 480px) {
+  section#left {
+    -webkit-order: 99;
+    order: 99;
+  }
+  footer {
+    -webkit-order: 100;
+    order: 100;
+  }
+}
 
 /* ============================================
 	Tablet and Desktop Devices: 481px or more
    ============================================
 */
+
+@media only screen and (min-width: 481px) {
+  nav.vertical ul {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row nowrap;
+    flex-flow: row nowrap;
+  }
+  nav.vertical li {
+    -webkit-flex: 1 1 240px;
+    flex: 1 1 240px;
+  }
+}
