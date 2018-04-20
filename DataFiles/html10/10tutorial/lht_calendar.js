@@ -59,3 +59,20 @@ function calCaption(calDate) {
   return "<caption>" + monthName[thisMonth] + " " + thisYear +
     "</caption>";
 }
+
+/* Function to calculate the number of days in the month */
+function daysInMonth(calDate) {
+  // Array of days in each month
+  var dayCount = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+  // Extract the four digit year and month value
+  var thisYear = calDate.getFullYear();
+  var thisMonth = calDate.getMonth();
+  // Revise the days in February for leap years
+  if (thisYear % 4 === 0) {
+    if ((thisYear % 100 != 0) || (thisYear % 400 === 0)) {
+      dayCount[1] = 29;
+    }
+  }
+  // Return the number of days for the current month
+  return dayCount[thisMonth];
+}
