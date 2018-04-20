@@ -5,9 +5,8 @@
    Tutorial 10
    Review Assignment
 
-   Author: 
-   Date:   
+   Author: Logan Halloran
+   Date:   04.20.2018 02:50 PM
 
-	
+
 */
-
