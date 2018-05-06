@@ -3,29 +3,80 @@ Main
 ***********************************************/
 
 body {
-  width: 100%;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+  /* width: 100%; */
   background-color: rgb(80, 80, 80);
-  padding-bottom: 30%;
+  /* margin: 0px auto; */
+  min-width: 320px;
+  max-width: 1100px;
+  /* padding: 10px; */
   color: white;
 }
 
-header {
+body>header {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+  -webkit-align-items: flex-end;
+  align-items: flex-end;
   width: 100%;
-  padding: 0;
-  margin: 0;
+  /* padding: 0; */
+  /* margin-bottom: 30px; */
   background-color: #D0E4F5;
-  color: red;
 }
 
-.header {
+body>header>img {
   display: block;
-  margin: auto;
-  width: 20%;
+  -webkit-flex: 0 1 200px;
+  flex: 0 1 200px;
+}
+
+body>header>nav {
+  -webkit-flex: 1 1 441px;
+  flex: 1 1 441px;
+}
+
+body>header>nav>ul {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
+}
+
+body>header>nav>ul li {
+  -webkit-flex: 0 1 auto;
+  flex: 0 1 auto;
+}
+
+body>header>nav>ul>li {
+  font-size: 0.8em;
+  line-height: 1.2em;
+  height: 1.2em;
+  /* padding: 0px 10px; */
+}
+
+body>header>nav>ul>li>a {
+  color: white;
+  display: block;
+  width: 100%;
+}
+
+body>section>img {
+  display: block;
+  -webkit-flex: 0 1 200px;
+  flex: 0 1 200px;
+  max-width: 600px !important;
 }
 
 footer {
   background-color: rgb(59, 59, 59);
-  color: white;
+  color: white !important;
   font-size: 1em;
   font-weight: bold;
   font-family: verdana;
@@ -41,22 +92,32 @@ footer a {
   color: #BCBCBC;
 }
 
+footer, footer span a {
+  padding: 10px;
+  color: #f8f9fa;
+}
+
+footer span a:hover {
+  color: rgb(0, 167, 167);
+  text-decoration: underline;
+}
+
 #banner {
   width: 100%;
-	margin: 0px auto;
+  margin: 0px auto;
   background-color: #D0E4F5;
 }
 
 #indexMain {
-	text-align: center;
+  text-align: center;
 }
 
 #mainNav {
-	font-family: verdana;
-	background-color: #0B6FA4;
-	border-radius: 0px;
-	padding: 5px 16px;
-	text-align: center;
+  font-family: verdana;
+  background-color: #0B6FA4;
+  border-radius: 0px;
+  /* padding: 5px 16px; */
+  text-align: center;
   margin-top: 1%;
   margin-bottom: 1%;
 }
@@ -64,43 +125,42 @@ footer a {
 #mainNav a {
   font-family: verdana;
   color: white;
-	font-size: 1.5em;
-	padding: 5px 30px;
-	text-decoration: none;
+  font-size: 1.5em;
+  padding: 5px;
+  text-decoration: none;
 }
 
 #mainNav a:hover {
   font-family: verdana;
+  color: black;
   font-size: 1.5em;
-	background-color: white;
-	color: black;
-  padding: 5px 30px;
+  background-color: white;
+  /* padding: 5px 30px; */
 }
 
 #map {
-	display: block;
-	margin: 20px auto;
+  display: block;
+  margin: 20px auto;
 }
 
 #mapMain {
-	text-align: center;
+  text-align: center;
 }
-
 
 /***********************************************
 Headers
 ***********************************************/
 
-h1{
-	text-align: center;
-	font-size: 3em;
-	font-weight: bolder;
-	font-family: verdana;
-	margin-top: 10;
-	margin-bottom: 10;
+h1 {
+  text-align: center;
+  font-size: 3em;
+  font-weight: bolder;
+  font-family: verdana;
+  margin-top: 10;
+  margin-bottom: 10;
 }
 
-h2{
+h2 {
   text-align: center;
   font-size: 2.5em;
   font-weight: bolder;
@@ -109,7 +169,7 @@ h2{
   margin-bottom: 10;
 }
 
-h3{
+h3 {
   text-align: center;
   font-size: 2em;
   font-weight: bolder;
@@ -118,7 +178,7 @@ h3{
   margin-bottom: 10;
 }
 
-h4{
+h4 {
   text-align: center;
   font-size: 1.5em;
   font-weight: bolder;
@@ -127,7 +187,7 @@ h4{
   margin-bottom: 10;
 }
 
-h5{
+h5 {
   text-align: center;
   font-size: 1em;
   font-weight: bolder;
@@ -136,7 +196,7 @@ h5{
   margin-bottom: 10;
 }
 
-h6{
+h6 {
   text-align: center;
   font-size: 0.5em;
   font-weight: bolder;
@@ -145,11 +205,10 @@ h6{
   margin-bottom: 10;
 }
 
-
-
 /***********************************************
 Forms & Input
 ***********************************************/
+
 form {
   margin-left: 10;
   margin-right: 10;
@@ -169,32 +228,38 @@ button {
   width: 10%;
 }
 
-
-fieldset{
-	background: blue;
-	color: red;
+fieldset {
+  background: blue;
+  color: red;
 }
 
-
-
 /***********************************************
-Extras
+Formatting
 ***********************************************/
 
-select{
+select {
   background-color: #CC05CE;
   color: white;
 }
 
-legend{
+legend {
   background-color: white;
   font-weight: bolder;
 }
 
 p {
-    padding: 10px;
+  padding: 10px;
 }
 
+section {
+  float: left;
+  width: 63%;
+}
+
+aside {
+  float: right;
+  width: 30%;
+}
 
 /***********************************************
 Columns
@@ -266,6 +331,63 @@ Columns
   padding-right: 1%;
 }
 
+/***********************************************
+Containers
+***********************************************/
+
+/* Display Grid */
+
+/* Generates a 3x4 */
+
+/* 1x4 Top */
+
+/* 1x2 MiddleLeft ** 1x2 MiddleRight */
+
+/* 1x4 Bottom */
+
+.grid-container-display {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-gap: 2% 2%;
+}
+
+[data-area="Top"] {
+  grid-area: 1 / 1 / 1 / 5;
+}
+
+[data-area="MiddleLeft"] {
+  grid-area: 2 / 1 / 2 / 3;
+}
+
+[data-area="MiddleRight"] {
+  grid-area: 2 / 3 / 2 / 5;
+}
+
+[data-area="Bottom"] {
+  grid-area: 3 / 1 / 3 / 5;
+}
+
+/* Poster Grid */
+
+/* Generates a 1x4 */
+
+/* 1x4 Poster ** 1x4 Article */
+
+.grid-container-poster {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  grid-gap: 0% 0%;
+}
+
+[data-area="Poster"] {
+  grid-area: 1 / 1 / 3 / 3;
+}
+
+[data-area="Article"] {
+  grid-area: 1 / 3 / 3 / 5;
+}
 
 /***********************************************
 Table Class: paleBlueRows
@@ -281,23 +403,29 @@ table.paleBlueRows {
   margin-left: 10%;
   margin-right: 10%;
 }
+
 table.paleBlueRows td, table.paleBlueRows th {
   border: 1px solid #FFFFFF;
   padding: 2%;
 }
+
 table.paleBlueRows tbody td {
   font-size: 1em;
 }
+
 table.paleBlueRows tr:nth-child(even) {
   background: #D0E4F5;
 }
+
 table.paleBlueRows tr:nth-child(odd) {
   background: white;
 }
+
 table.paleBlueRows thead {
   background: #0B6FA4;
   border-bottom: 5px solid #FFFFFF;
 }
+
 table.paleBlueRows th {
   font-size: 1.5em;
   font-weight: bold;
@@ -308,6 +436,7 @@ table.paleBlueRows th {
   padding-top: 5;
   padding-bottom: 5;
 }
+
 table.paleBlueRows thead th:first-child {
   border-left: none;
 }
@@ -316,9 +445,52 @@ table.paleBlueRows tfoot td {
   font-size: 1em;
 }
 
-
 /*Bold Second Column*/
-table.paleBlueRows tr > td:first-child + td  {
+
+table.paleBlueRows tr>td:first-child+td {
   font-size: 1.5em;
   font-weight: bold;
 }
+
+/* ===============================
+   Mobile Styles: 0px to 640px
+   ===============================
+*/
+
+@media only screen and (max-width: 640px) {
+  body>header nav ul {
+    -webkit-justify-content: center;
+    justify-content: center;
+  }
+  body>header>img {
+    margin: 0px auto;
+  }
+  article h1 {
+    font-size: 2.4em;
+  }
+  body>nav {
+    -webkit-flex: 1 1 640px;
+    flex: 1 1 640px;
+    border-left: none;
+    -moz-column-width: 200px;
+    -webkit-column-width: 200px;
+    column-width: 200px;
+    margin-bottom: 25px;
+  }
+  body>nav>img {
+    display: none;
+  }
+  body>header>nav>ul>li {
+    font-size: 1em;
+    line-height: 1.4em;
+    height: 1.4 em;
+    padding: 0px 10px;
+  }
+}
+
+/* =============================================
+   Tablet and Desktop Styles: greater than 640px
+   =============================================
+*/
+
+@media only screen and (min-width: 641px) {}
